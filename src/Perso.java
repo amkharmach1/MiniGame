@@ -4,10 +4,11 @@ public abstract class Perso {
 	protected int HP;
 	protected int deplacement;
 	
-	public Perso(int atk, int hp, int deplacement) {
-		this.attack = atk;
-		this.HP = hp;
-		this.deplacement = deplacement;
+	public Perso(typePersonnages t) {
+		this.attack = t.attaque;
+		this.HP = t.hp;
+		this.deplacement = t.deplacement;
+		
 	}
 
 	public int getAttack() {
@@ -29,4 +30,6 @@ public abstract class Perso {
 	public boolean isAlive() {
 		return this.HP > 0;	
 	}
+	
+	public abstract String toString();
 }
