@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Plateau {
 	private int x;//longueur
 	private int y;//largeur
@@ -18,12 +16,14 @@ public class Plateau {
 	}
 
 	public int getLongueur() {
-		return x;
+		return this.x;
 	}
 
 	public int getLargeur() {
-		return y;
+		return this.y;
 	}
+	
+	
 	
 	public void setPlateau(int x, int y, Perso e) {
 		this.plateau[x][y] = e;
@@ -35,7 +35,7 @@ public class Plateau {
 		for(int i = 0; i < this.getLongueur(); i++) {
 			for(int j = 0; j < this.getLargeur(); j++) {
 				if (this.plateau[i][j] == null) res+="☐";
-				else res+="X";
+				else res+=this.plateau[i][j];
 			}
 			res+="\n";
 		}
