@@ -7,7 +7,7 @@ public class Eclaireur extends Perso{
 
 
 	public String toString() {
-		return "E";
+		return "🐺";
 	}
 
 }
