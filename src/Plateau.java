@@ -24,18 +24,22 @@ public class Plateau {
 	public int getLargeur() {
 		return y;
 	}
+	
+	public void setPlateau(int x, int y, Perso e) {
+		this.plateau[x][y] = e;
+	}
 
 	@Override
 	public String toString() {
-		String res = "|";
+		String res = "";
 		for(int i = 0; i < this.getLongueur(); i++) {
-			
+			for(int j = 0; j < this.getLargeur(); j++) {
+				if (this.plateau[i][j] == null) res+="☐";
+				else res+="X";
+			}
+			res+="\n";
 		}
 		return res;
 	}
-	
-	
-	
-	
 	
 }
