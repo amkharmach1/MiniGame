@@ -4,8 +4,10 @@ public abstract class Perso {
 	protected int HP;
 	protected int deplacement;
 	
-	public Perso() {
-		
+	public Perso(int atk, int hp, int deplacement) {
+		this.attack = atk;
+		this.HP = hp;
+		this.deplacement = deplacement;
 	}
 
 	public int getAttack() {
@@ -22,5 +24,9 @@ public abstract class Perso {
 	
 	public void wounded(int damage) {
 		this.HP = this.HP - damage;
+	}
+	
+	public boolean isAlive() {
+		return this.HP > 0;	
 	}
 }
