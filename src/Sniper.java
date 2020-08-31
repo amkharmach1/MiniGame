@@ -6,7 +6,7 @@ public class Sniper extends Perso {
 	}
 
 	public String toString() {
-		return "S";
+		return "⚔";
 	}
 
 }

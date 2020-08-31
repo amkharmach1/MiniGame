@@ -4,6 +4,6 @@ public class Leader extends Perso{
 	}
 
 	public String toString() {
-		return "S";
+		return "♚";
 	}
 }

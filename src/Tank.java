@@ -6,6 +6,6 @@ public class Tank extends Perso {
 	}
 
 	public String toString() {
-		return "T";
+		return "️";
 	}
 }
