@@ -9,6 +9,7 @@ public class mouvement {
 	}
 	
 	public typeMouvement getMouvement() {
+		System.out.println("Saisir le déplacement voulu (ZQSD): \n");
 		String input = scan.next();
 		switch (input.charAt(0)) {
 		case 'z':
