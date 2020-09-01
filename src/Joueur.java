@@ -12,9 +12,21 @@ public class Joueur {
 	public void jouerTour() {
 		for (int i = 0; i < 4; i++) {
 			if (pions[i].isAlive()) {
-				
+				this.pions[i].jouer();
 			}
 		}
+	}
+	
+	public boolean aPerdu() {
+		boolean aPerdu = true;
+		int i = 0;
+		while (aPerdu && i < 4) {
+			if(this.pions[i].isAlive()) {
+				aPerdu = false;
+			}
+			i++;
+		}
+		return aPerdu;
 	}
 }
 

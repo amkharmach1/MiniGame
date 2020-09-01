@@ -48,4 +48,10 @@ public abstract class Perso extends Element {
 	}
 	
 	public abstract String toString();
+	
+	public void jouer() {
+		//TODO faire les actions
+	}
+	
+	
 }
