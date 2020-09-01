@@ -47,7 +47,7 @@ public abstract class Perso extends Element {
 	}
 	
 	public boolean accomplirMouvement(typeMouvement direction) {
-		if(dansLimites(direction) && this.lePlateau.isFree(direction.getX() + this.x, direction.getY() + this.y)) {
+		if(dansLimites(direction.getX(), direction.getY()) && this.lePlateau.isFree(direction.getX() + this.x, direction.getY() + this.y)) {
 			this.lePlateau.getCase(this.x, this.y).setElement(null);
 			this.x = this.x + direction.getX();
 			this.y = this.y + direction.getY();
@@ -58,9 +58,9 @@ public abstract class Perso extends Element {
 		}
 	}
 	
-	public boolean dansLimites(typeMouvement direction) {
-		return (this.x + direction.getX() >= 0 && this.x + direction.getX() < this.lePlateau.getLargeur()) 
-				&& (this.y + direction.getY() >= 0 && this.y + direction.getY() < this.lePlateau.getLongueur());
+	public boolean dansLimites(int x, int y) {
+		return (this.x + x >= 0 && this.x + x < this.lePlateau.getLargeur()) 
+				&& (this.y + y >= 0 && this.y + y < this.lePlateau.getLongueur());
 	}
 	
 	public void bouger() {
@@ -81,8 +81,20 @@ public abstract class Perso extends Element {
 		}
 	}
 	
+	public void attaquer() {
+		Mouvement mouv = new Mouvement();
+		typeMouvement direction = mouv.getMouvement();
+		int x = direction.getX();
+		int y = direction.getY();
+		if(dansLimites(x, y) 
+				&& !this.lePlateau.isFree(x + this.x, y + this.y)) {
+			
+		}
+	}
+	
 	public void jouer() {
 		bouger();
+		attaquer();
 	}
 	
 	
