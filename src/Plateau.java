@@ -25,8 +25,8 @@ public class Plateau {
 	
 	
 	
-	public void setPlateau(int x, int y, Perso e) {
-		this.plateau[x][y] = e;
+	public void setPlateau(Perso e) {
+		this.plateau[e.getX()][e.getY()] = e;
 	}
 
 	@Override
