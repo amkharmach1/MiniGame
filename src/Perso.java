@@ -47,7 +47,7 @@ public abstract class Perso extends Element {
 	}
 	
 	public boolean accomplirMouvement(typeMouvement direction) {
-		if(this.lePlateau.isFree(direction.getX() + this.x, direction.getY() + this.y)) {
+		if(dansLimites(direction) && this.lePlateau.isFree(direction.getX() + this.x, direction.getY() + this.y)) {
 			this.lePlateau.getCase(this.x, this.y).setElement(null);
 			this.x = this.x + direction.getX();
 			this.y = this.y + direction.getY();
@@ -56,6 +56,11 @@ public abstract class Perso extends Element {
 		} else  {
 			return false;
 		}
+	}
+	
+	public boolean dansLimites(typeMouvement direction) {
+		return (this.x + direction.getX() >= 0 && this.x + direction.getX() < this.lePlateau.getLargeur()) 
+				&& (this.y + direction.getY() >= 0 && this.y + direction.getY() < this.lePlateau.getLongueur());
 	}
 	
 	public void bouger() {
@@ -70,6 +75,7 @@ public abstract class Perso extends Element {
 				 }
 				 
 			 }
+			 System.out.println(this.lePlateau.toString());
 		} while(i < this.deplacement);
 	}
 	

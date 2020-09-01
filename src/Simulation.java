@@ -60,5 +60,12 @@ public class Simulation {
 		
 		//Afficher le plateau 
 		System.out.println(plateau);
+		
+		//Mouvements
+		
+		while(true) {
+			j1.jouerTour();
+			j2.jouerTour();
+		}
 	}
 }
