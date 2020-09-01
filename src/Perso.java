@@ -3,6 +3,7 @@ public abstract class Perso extends Element {
 	protected int attack;
 	protected int HP;
 	protected int deplacement;
+	protected int portee;
 	protected Plateau lePlateau;
 	
 	public Perso(typePersonnages t, int x, int y, Plateau lePlateau) {
@@ -10,6 +11,7 @@ public abstract class Perso extends Element {
 		this.attack = t.attaque;
 		this.HP = t.hp;
 		this.deplacement = t.deplacement;
+		this.portee = t.portee;
 		this.lePlateau = lePlateau;
 	}
 	
