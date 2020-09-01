@@ -2,13 +2,13 @@ public class Plateau {
 	private int x;//longueur
 	private int y;//largeur
 	
-	Perso plateau[][];
+	protected Case plateau[][];
 	
 	
 	public Plateau(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.plateau = new Perso[8][8];
+		this.plateau = new Case[8][8];
 	}
 	
 	public Plateau() {
@@ -23,10 +23,8 @@ public class Plateau {
 		return this.y;
 	}
 	
-	
-	
-	public void setPlateau(int x, int y, Perso e) {
-		this.plateau[x][y] = e;
+	public void putPersoInPlateau(Perso p, int x, int y) {
+		this.plateau[x][y].setElement(p);
 	}
 
 	@Override
