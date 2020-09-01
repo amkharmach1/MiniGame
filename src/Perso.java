@@ -71,6 +71,7 @@ public abstract class Perso extends Element {
 	public void bouger() {
 		System.out.println(this.toString());
 		System.out.println("Deplacement");
+		System.out.println(this.lePlateau.toString());
 		Mouvement selection = new Mouvement();
 		typeMouvement direction;
 		int i = 0;
@@ -83,7 +84,6 @@ public abstract class Perso extends Element {
 					 }
 					 
 				 }
-				 System.out.println(this.lePlateau.toString());
 			} while(i < this.deplacement);
 		}
 	}
