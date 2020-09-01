@@ -23,10 +23,8 @@ public class Plateau {
 		return this.y;
 	}
 	
-	
-	
-	public void setPlateau(int x, int y, Perso e) {
-		this.plateau[x][y] = e;
+	public void putPersoInPlateau(Perso p, int x, int y) {
+		this.plateau[x][y].setElement(p);
 	}
 
 	@Override
