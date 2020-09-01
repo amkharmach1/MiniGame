@@ -1,8 +1,8 @@
 
 public class Eclaireur extends Perso{
 
-	public Eclaireur(int x, int y) {
-		super(typePersonnages.ECLAIREUR, x, y);
+	public Eclaireur(int x, int y, Plateau lePlateau) {
+		super(typePersonnages.ECLAIREUR, x, y, lePlateau);
 	}
 
 

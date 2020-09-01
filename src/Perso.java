@@ -3,12 +3,14 @@ public abstract class Perso extends Element {
 	protected int attack;
 	protected int HP;
 	protected int deplacement;
+	protected Plateau lePlateau;
 	
-	public Perso(typePersonnages t, int x, int y) {
+	public Perso(typePersonnages t, int x, int y, Plateau lePlateau) {
 		super(x,y);
 		this.attack = t.attaque;
 		this.HP = t.hp;
 		this.deplacement = t.deplacement;
+		this.lePlateau = lePlateau;
 	}
 	
 	public void setCoor(int x, int y) {
@@ -44,8 +46,35 @@ public abstract class Perso extends Element {
 		return this.HP > 0;	
 	}
 	
+	public boolean accomplirMouvement(typeMouvement direction) {
+		if(this.lePlateau.isFree(direction.getX() + this.x, direction.getY() + this.y)) {
+			this.lePlateau.getCase(this.x, this.y).setElement(null);
+			this.x = this.x + direction.getX();
+			this.y = this.y + direction.getY();
+			this.lePlateau.getCase(this.x, this.y).setElement(this);
+			return true;
+		} else  {
+			return false;
+		}
+	}
+	
+	public void bouger() {
+		Mouvement selection = new Mouvement();
+		typeMouvement direction;
+		int i = 0;
+		do {
+			 direction = selection.getMouvement(); 
+			 if(direction != null) {
+				 if(accomplirMouvement(direction)) {
+					 i++;
+				 }
+				 
+			 }
+		} while(i < this.deplacement);
+	}
+	
 	public void jouer() {
-		//TODO Faire les actions
+		bouger();
 	}
 	
 	
