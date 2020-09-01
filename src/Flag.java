@@ -7,11 +7,26 @@ public class Flag extends Element {
 		this.isTakenBy = null;
 	}
 	
+	public boolean isTaken() {
+		return this.isTakenBy != null;
+	}
+	
 	public void setIsTakenBy(Leader l) {
 		this.isTakenBy = l;
 	}
 	
 	public String toString() {
-		return "🚩";
+		if(this.isTaken()) return "🚩";
+		else return "⬜";
+	}
+
+	@Override
+	public int getX() {
+		return this.x;
+	}
+
+	@Override
+	public int getY() {
+		return this.x;
 	}
 }

@@ -1,4 +1,3 @@
-
 public class Mur extends Element {
 
 	public Mur(int x, int y) {
@@ -6,7 +5,17 @@ public class Mur extends Element {
 	}
 
 	public String toString() {
-		return "";
+		return "🧱";
+	}
+
+	@Override
+	public int getX() {
+		return this.x;
+	}
+
+	@Override
+	public int getY() {
+		return this.y;
 	}
 
 }

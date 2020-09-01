@@ -17,15 +17,15 @@ public class Plateau {
 	}
 
 	public int getLongueur() {
-		return this.x;
-	}
-
-	public int getLargeur() {
 		return this.y;
 	}
 
-	public void putPersoInPlateau(Perso p) {
-		this.plateau[p.getX()][p.getY()].setElement(p);
+	public int getLargeur() {
+		return this.x;
+	}
+
+	public void putPersoInPlateau(Element e) {
+		this.plateau[e.getX()][e.getY()].setElement(e);
 	}
 	
 	public void setCasePos() {
@@ -41,7 +41,7 @@ public class Plateau {
 		String res = "";
 		for(int i = 0; i < this.getLongueur(); i++) {
 			for(int j = 0; j < this.getLargeur(); j++) {
-				res += this.plateau[i][j];
+				res += this.plateau[j][i];
 			}
 			res+="\n";
 		}

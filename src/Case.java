@@ -31,7 +31,7 @@ public class Case {
 	
 	public String toString() {
 		if(this.e == null) {
-			return "☐";
+			return "⬜";
 		} else {
 			return this.e.toString();
 		}

@@ -5,13 +5,13 @@ public class Simulation {
 		System.out.println("1.Jouer");
 		System.out.println("2.Quitter");
 		
-		Scanner scan = new Scanner(System.in);
-		
-		String saisieUtil = scan.next();
-		
-		if(saisieUtil.equals("1")) Simulation.jouer();
-		else if (saisieUtil.equals("2")) {
-			System.out.println("Merci beaucoup !");
+		try (Scanner scan = new Scanner(System.in)) {
+			String saisieUtil = scan.next();
+			
+			if(saisieUtil.equals("1")) Simulation.jouer();
+			else if (saisieUtil.equals("2")) {
+				System.out.println("Merci beaucoup !");
+			}
 		}
 	}
 	
@@ -40,6 +40,21 @@ public class Simulation {
 		for (int i = 0; i < j2.getPions().length; i++) {
 			plateau.putPersoInPlateau(j2.getPions()[i]);
 		}
+		
+		//Placer l'objectif dans le plateau
+		Flag f = new Flag(4, 4);
+		plateau.putPersoInPlateau(f);
+		
+		
+		//PLacer les murs dans le plateau
+		Mur un = new Mur(1, 3);
+		plateau.putPersoInPlateau(un);
+		Mur deux = new Mur(3, 4);
+		plateau.putPersoInPlateau(deux);
+		Mur trois = new Mur(5, 3);
+		plateau.putPersoInPlateau(trois);
+		Mur quatre = new Mur(7, 4);
+		plateau.putPersoInPlateau(quatre);
 		
 		//Afficher le plateau 
 		System.out.println(plateau);
