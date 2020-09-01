@@ -3,15 +3,12 @@ public abstract class Perso extends Element {
 	protected int attack;
 	protected int HP;
 	protected int deplacement;
-	protected int x;
-	protected int y;
 	
 	public Perso(typePersonnages t, int x, int y) {
+		super(x,y);
 		this.attack = t.attaque;
 		this.HP = t.hp;
 		this.deplacement = t.deplacement;
-		this.x = x;
-		this.y = y;
 	}
 	
 	public void setCoor(int x, int y) {
