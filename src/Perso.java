@@ -74,9 +74,9 @@ public abstract class Perso extends Element {
 		int i = 0;
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
-				System.out.println(this.toString());
-				System.out.println("Deplacement");
-				System.out.println(this.lePlateau.toString());
+				System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
+				System.out.println("DEPLACEMENT");
+				System.out.print(this.lePlateau.toString());
 				 direction = selection.getMouvement();
 				 if(direction != null) {
 					 if(accomplirMouvement(direction)) {
@@ -89,8 +89,8 @@ public abstract class Perso extends Element {
 	}
 	
 	public void attaquer() {
-		System.out.println(this.toString());
-		System.out.println("Attaque");
+		System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
+		System.out.println("ATTAQUE");
 		System.out.println(this.lePlateau.toString());
 		Mouvement mouv = new Mouvement();
 		typeMouvement direction = mouv.getMouvement();
