@@ -1,5 +1,5 @@
 
-public abstract class Perso {
+public abstract class Perso extends Element {
 	protected int attack;
 	protected int HP;
 	protected int deplacement;
