@@ -48,4 +48,12 @@ public class Plateau {
 		return res;
 	}
 	
+	public boolean isFree(int x, int y) {
+		return this.plateau[x][y].getElement() == null;
+	}
+	
+	public Case getCase(int x, int y) {
+		return this.plateau[x][y];
+	}
+	
 }
