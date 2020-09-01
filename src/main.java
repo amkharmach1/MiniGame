@@ -7,10 +7,10 @@ public class main {
 		Perso s = new Sniper(2,2);
 		Perso T = new Tank(3,3);
 		Perso e = new Eclaireur(4,4);
-		t.setPlateau(l);
-		t.setPlateau(s);
-		t.setPlateau(T);
-		t.setPlateau(e);
+		t.putPersoInPlateau(l);
+		t.putPersoInPlateau(s);
+		t.putPersoInPlateau(T);
+		t.putPersoInPlateau(e);
 		System.out.println(t);
 
 	}
