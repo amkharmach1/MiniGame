@@ -1,8 +1,8 @@
 
 public class Sniper extends Perso {
 
-	public Sniper(int x, int y) {
-		super(typePersonnages.SNIPER, x, y);
+	public Sniper(int x, int y, Plateau lePlateau) {
+		super(typePersonnages.SNIPER, x, y, lePlateau);
 	}
 
 	public String toString() {
