@@ -68,7 +68,7 @@ public abstract class Perso extends Element {
 		typeMouvement direction;
 		int i = 0;
 		do {
-			 direction = selection.getMouvement(); 
+			 direction = selection.getMouvement();
 			 if(direction != null) {
 				 if(accomplirMouvement(direction)) {
 					 i++;

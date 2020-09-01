@@ -25,7 +25,7 @@ public class Simulation {
 		Sniper sJ1 = new Sniper(1, 0, plateau);
 		Eclaireur eJ1 = new Eclaireur(0, 1, plateau);
 		
-		Joueur j1 = new Joueur(lJ1, tJ1, sJ1, eJ1);
+		Joueur j1 = new Joueur(eJ1, tJ1, sJ1, lJ1);
 		
 		//Team J2
 		Leader lJ2 = new Leader(7, 7, plateau);
@@ -33,7 +33,7 @@ public class Simulation {
 		Sniper sJ2 = new Sniper(6, 7, plateau);
 		Eclaireur eJ2 = new Eclaireur(7, 6, plateau);
 		
-		Joueur j2 = new Joueur(lJ2, tJ2, sJ2, eJ2);
+		Joueur j2 = new Joueur(eJ2, tJ2, sJ2, lJ2);
 		
 		//Placer les perso dans le Plateau
 		for (int i = 0; i < j1.getPions().length; i++) {
