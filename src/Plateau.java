@@ -23,9 +23,9 @@ public class Plateau {
 	public int getLargeur() {
 		return this.y;
 	}
-	
-	public void putPersoInPlateau(Perso p, int x, int y) {
-		this.plateau[x][y].setElement(p);
+
+	public void putPersoInPlateau(Perso p) {
+		this.plateau[p.getX()][p.getY()].setElement(p);
 	}
 	
 	public void setCasePos() {
