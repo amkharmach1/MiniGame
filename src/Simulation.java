@@ -1,9 +1,34 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Simulation {
 	public static void menu() {
-		System.out.println("1.Jouer");
-		System.out.println("2.Quitter");
+		System.out.println("\n\n");
+		System.out.println(" ________           __                                                  __  __  ______  __    __  ________ \n" + 
+				"|        \\         |  \\                                                |  \\|  \\|      \\|  \\  |  \\|        \\\n" + 
+				"| $$$$$$$$ _______ | $$____    ______    _______         ______        | $$| $$ \\$$$$$$| $$  | $$ \\$$$$$$$$\n" + 
+				"| $$__    /       \\| $$    \\  /      \\  /       \\       |      \\       | $$ \\$   | $$  | $$  | $$   | $$   \n" + 
+				"| $$  \\  |  $$$$$$$| $$$$$$$\\|  $$$$$$\\|  $$$$$$$        \\$$$$$$\\      | $$      | $$  | $$  | $$   | $$   \n" + 
+				"| $$$$$  | $$      | $$  | $$| $$    $$| $$             /      $$      | $$      | $$  | $$  | $$   | $$   \n" + 
+				"| $$_____| $$_____ | $$  | $$| $$$$$$$$| $$_____       |  $$$$$$$      | $$     _| $$_ | $$__/ $$   | $$   \n" + 
+				"| $$     \\\\$$     \\| $$  | $$ \\$$     \\ \\$$     \\       \\$$    $$      | $$    |   $$ \\ \\$$    $$   | $$   \n" + 
+				" \\$$$$$$$$ \\$$$$$$$ \\$$   \\$$  \\$$$$$$$  \\$$$$$$$        \\$$$$$$$       \\$$     \\$$$$$$  \\$$$$$$     \\$$   \n" + 
+				"                                                                                                         ");
+		System.out.println("\n\n\n");
+		System.out.println("   ___         __                     \n" + 
+				"  <  /        / /___  __  _____  _____\n" + 
+				"  / /    __  / / __ \\/ / / / _ \\/ ___/\n" + 
+				" / /    / /_/ / /_/ / /_/ /  __/ /    \n" + 
+				"/_(_)   \\____/\\____/\\__,_/\\___/_/     \n" + 
+				"                                      \n" + 
+				"\n" + 
+				"");
+		System.out.println("   ___        ____        _ __  __           \n" + 
+				"  |__ \\      / __ \\__  __(_) /_/ /____  _____\n" + 
+				"  __/ /     / / / / / / / / __/ __/ _ \\/ ___/\n" + 
+				" / __/_    / /_/ / /_/ / / /_/ /_/  __/ /    \n" + 
+				"/____(_)   \\___\\_\\__,_/_/\\__/\\__/\\___/_/     \n" + 
+				"                                             ");
 		
 		try (Scanner scan = new Scanner(System.in)) {
 			String saisieUtil = scan.next();
@@ -13,6 +38,7 @@ public class Simulation {
 				System.out.println("Merci beaucoup !");
 			}
 		}
+		clean();
 	}
 	
 	private static void jouer() {
@@ -66,6 +92,12 @@ public class Simulation {
 		while(true) {
 			j1.jouerTour();
 			j2.jouerTour();
+		}
+	}
+	
+	public static void clean() {
+		for(int i = 0; i < 100; i++) {
+			System.out.println("\n");
 		}
 	}
 }
