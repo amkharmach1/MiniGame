@@ -69,13 +69,14 @@ public abstract class Perso extends Element {
 	}
 	
 	public void bouger() {
-		System.out.println(this.toString());
-		System.out.println("Deplacement");
 		Mouvement selection = new Mouvement();
 		typeMouvement direction;
 		int i = 0;
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
+				System.out.println(this.toString());
+				System.out.println("Deplacement");
+				System.out.println(this.lePlateau.toString());
 				 direction = selection.getMouvement();
 				 if(direction != null) {
 					 if(accomplirMouvement(direction)) {
@@ -83,7 +84,6 @@ public abstract class Perso extends Element {
 					 }
 					 
 				 }
-				 System.out.println(this.lePlateau.toString());
 			} while(i < this.deplacement);
 		}
 	}
@@ -91,6 +91,7 @@ public abstract class Perso extends Element {
 	public void attaquer() {
 		System.out.println(this.toString());
 		System.out.println("Attaque");
+		System.out.println(this.lePlateau.toString());
 		Mouvement mouv = new Mouvement();
 		typeMouvement direction = mouv.getMouvement();
 		int x = direction.getX() * this.portee;
@@ -102,7 +103,6 @@ public abstract class Perso extends Element {
 				persoCible.wounded(this.attack);
 			}
 		}
-		System.out.println(this.lePlateau.toString());
 	}
 	
 	public void jouer() {

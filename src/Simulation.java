@@ -89,7 +89,7 @@ public class Simulation {
 		
 		//Mouvements
 		
-		while(true) {
+		while(!j1.aPerdu() && !j2.aPerdu()) {
 			j1.jouerTour();
 			j2.jouerTour();
 		}
