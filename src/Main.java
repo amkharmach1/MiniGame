@@ -29,7 +29,7 @@ public class Main {
 		}*/
 		
 		Simulation s = new Simulation();
-		Simulation.jouer();
+		Simulation.menu();
 		
 	}
 }

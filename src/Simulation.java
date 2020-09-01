@@ -15,7 +15,7 @@ public class Simulation {
 		}
 	}
 	
-	public static void jouer() {
+	private static void jouer() {
 		//Team J1
 		Leader lJ1 = new Leader(0, 0);
 		Tank tJ1 = new Tank(1, 1);
