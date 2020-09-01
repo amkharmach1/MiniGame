@@ -67,16 +67,18 @@ public abstract class Perso extends Element {
 		Mouvement selection = new Mouvement();
 		typeMouvement direction;
 		int i = 0;
-		do {
-			 direction = selection.getMouvement();
-			 if(direction != null) {
-				 if(accomplirMouvement(direction)) {
-					 i++;
+		if(!this.lePlateau.bloquer(this.x,this.y)) {
+			do {
+				 direction = selection.getMouvement();
+				 if(direction != null) {
+					 if(accomplirMouvement(direction)) {
+						 i++;
+					 }
+					 
 				 }
-				 
-			 }
-			 System.out.println(this.lePlateau.toString());
-		} while(i < this.deplacement);
+				 System.out.println(this.lePlateau.toString());
+			} while(i < this.deplacement);
+		}
 	}
 	
 	public void jouer() {

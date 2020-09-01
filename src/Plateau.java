@@ -56,4 +56,13 @@ public class Plateau {
 		return this.plateau[x][y];
 	}
 	
+	public boolean bloquer(int x, int y) {
+		boolean bloquer = true;
+		if(x - 1 >= 0 && isFree(x - 1, y)) bloquer = false;
+		if(x + 1 < this.getLargeur() && isFree(x + 1, y)) bloquer = false;
+		if(y - 1 >= 0 && isFree(x, y - 1)) bloquer = false;
+		if(y + 1 < this.getLongueur() && isFree(x, y + 1)) bloquer = false;
+		return bloquer;
+	}
+	
 }
