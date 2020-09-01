@@ -1,15 +1,18 @@
 
 public class Joueur {
 	private Perso[] pions = new Perso[4];
+	private String name;
 	
-	public Joueur(Perso e, Perso t, Perso s, Perso l) {
+	public Joueur(Perso e, Perso t, Perso s, Perso l, String name) {
 		pions[0] = e;
 		pions[1] = t;
 		pions[2] = s;
 		pions[3] = l;
+		this.name = name;
 	}
 	
 	public void jouerTour() {
+		System.out.println("Tour du joueur : " + this.name);
 		for (int i = 0; i < 4; i++) {
 			if (pions[i].isAlive()) {
 				this.pions[i].jouer();
