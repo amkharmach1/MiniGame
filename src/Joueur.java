@@ -2,11 +2,11 @@
 public class Joueur {
 	private Perso[] pions = new Perso[4];
 	
-	public Joueur(Eclaireur eclair, Tank tank, Sniper sniper, Leader leader) {
-		pions[0] = eclair;
-		pions[1] = tank;
-		pions[2] = sniper;
-		pions[3] = leader;
+	public Joueur(Perso e, Perso t, Perso s, Perso l) {
+		pions[0] = e;
+		pions[1] = t;
+		pions[2] = s;
+		pions[3] = l;
 	}
 	
 	public void jouerTour() {
