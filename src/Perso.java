@@ -84,11 +84,8 @@ public abstract class Perso extends Element {
 					 }
 					 
 				 }
-<<<<<<< HEAD
 				 System.out.println(this.lePlateau.toString());
 				 System.out.println("Déplacement de "+this.toString()+" , nombre de déplacement disponible: "+ (deplacement-i));
-=======
->>>>>>> 86774622d063dc28910d71beb3c8ff3df7e0ac03
 			} while(i < this.deplacement);
 		}
 	}
