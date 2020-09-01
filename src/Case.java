@@ -4,7 +4,7 @@ public class Case {
 	protected int posX;
 	protected int posY;
 	
-	public Case() {
+	public Case(int x, int y) {
 		this.e = null;
 	}
 	
@@ -24,7 +24,16 @@ public class Case {
 		return this.posY;
 	}
 	
-	public void setPosCase() {
-		
+	public void setPosCase(int x, int y) {
+		this.posX = x;
+		this.posY = y;
+	}
+	
+	public String toString() {
+		if(this.e == null) {
+			return "☐";
+		} else {
+			return this.e.toString();
+		}
 	}
 }

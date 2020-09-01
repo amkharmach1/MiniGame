@@ -8,7 +8,7 @@ public class Plateau {
 	public Plateau(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.plateau = new Case[8][8];
+		this.plateau = new Case[x][y];
 		setCasePos();
 	}
 	
@@ -31,7 +31,7 @@ public class Plateau {
 	public void setCasePos() {
 		for(int i = 0; i < this.x; i++) {
 			for(int j = 0; j < this.y; j++) {
-				
+				this.plateau[i][j] = new Case(i, j);
 			}
 		}
 	}
@@ -41,8 +41,7 @@ public class Plateau {
 		String res = "";
 		for(int i = 0; i < this.getLongueur(); i++) {
 			for(int j = 0; j < this.getLargeur(); j++) {
-				if (this.plateau[i][j] == null) res+="☐";
-				else res+=this.plateau[i][j];
+				res += this.plateau[i][j];
 			}
 			res+="\n";
 		}
