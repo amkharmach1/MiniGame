@@ -3,7 +3,7 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args){
-		Plateau t = new Plateau(8, 8);
+		/*Plateau t = new Plateau(8, 8);
 		Mouvement move = new Mouvement();
 		Perso l = new Leader(1,1);
 		Perso s = new Sniper(2,2);
@@ -26,7 +26,10 @@ public class Main {
 			}
 			System.out.println(t);
 			System.out.println(move.getMouvement());
-		}
+		}*/
+		
+		Simulation s = new Simulation();
+		Simulation.jouer();
 		
 	}
 }

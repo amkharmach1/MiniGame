@@ -17,6 +17,10 @@ public class Joueur {
 		}
 	}
 	
+	public Perso[] getPions() {
+		return this.pions;
+	}
+	
 	public boolean aPerdu() {
 		boolean aPerdu = true;
 		int i = 0;
