@@ -98,6 +98,7 @@ public abstract class Perso extends Element {
 				persoCible.wounded(this.attack);
 			}
 		}
+		System.out.println(this.lePlateau.toString());
 	}
 	
 	public void jouer() {
