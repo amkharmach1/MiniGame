@@ -1,7 +1,8 @@
+import java.io.IOException;
 
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		Plateau t = new Plateau(8, 8);
 		mouvement move = new mouvement();
 		Perso l = new Leader(1,1);
@@ -12,14 +13,20 @@ public class main {
 		t.putPersoInPlateau(s);
 		t.putPersoInPlateau(T);
 		t.putPersoInPlateau(e);
+		
 		for(int i = 0; i < 10; i++) {
-			System.out.flush();
+			try {
+				if(System.getProperty("os.name" ).startsWith("Windows")) {
+					Runtime.getRuntime().exec("cls");
+				} else {
+					Runtime.getRuntime().exec("clear");
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 			System.out.println(t);
 			System.out.println(move.getMouvement());
-			
 		}
-
-
+		
 	}
-
 }
