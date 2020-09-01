@@ -12,6 +12,7 @@ public class Joueur {
 	}
 	
 	public void jouerTour() {
+		System.out.println("Tour du joueur : " + this.name);
 		for (int i = 0; i < 4; i++) {
 			if (pions[i].isAlive()) {
 				this.pions[i].jouer();
