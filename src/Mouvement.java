@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class mouvement {
+public class Mouvement {
 	
 	public Scanner scan;
 	
-	public mouvement() {
+	public Mouvement() {
 		this.scan = new Scanner(System.in);
 	}
 	

@@ -1,10 +1,10 @@
 import java.io.IOException;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args){
 		Plateau t = new Plateau(8, 8);
-		mouvement move = new mouvement();
+		Mouvement move = new Mouvement();
 		Perso l = new Leader(1,1);
 		Perso s = new Sniper(2,2);
 		Perso T = new Tank(3,3);
