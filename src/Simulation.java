@@ -16,24 +16,26 @@ public class Simulation {
 	}
 	
 	private static void jouer() {
+		//Création du plateau
+		Plateau plateau = new Plateau();
+		
 		//Team J1
-		Leader lJ1 = new Leader(0, 0);
-		Tank tJ1 = new Tank(1, 1);
-		Sniper sJ1 = new Sniper(1, 0);
-		Eclaireur eJ1 = new Eclaireur(0, 1);
+		Leader lJ1 = new Leader(0, 0, plateau);
+		Tank tJ1 = new Tank(1, 1, plateau);
+		Sniper sJ1 = new Sniper(1, 0, plateau);
+		Eclaireur eJ1 = new Eclaireur(0, 1, plateau);
 		
 		Joueur j1 = new Joueur(lJ1, tJ1, sJ1, eJ1);
 		
 		//Team J2
-		Leader lJ2 = new Leader(7, 7);
-		Tank tJ2 = new Tank(6, 6);
-		Sniper sJ2 = new Sniper(6, 7);
-		Eclaireur eJ2 = new Eclaireur(7, 6);
+		Leader lJ2 = new Leader(7, 7, plateau);
+		Tank tJ2 = new Tank(6, 6, plateau);
+		Sniper sJ2 = new Sniper(6, 7, plateau);
+		Eclaireur eJ2 = new Eclaireur(7, 6, plateau);
 		
 		Joueur j2 = new Joueur(lJ2, tJ2, sJ2, eJ2);
 		
 		//Placer les perso dans le Plateau
-		Plateau plateau = new Plateau();
 		for (int i = 0; i < j1.getPions().length; i++) {
 			plateau.putPersoInPlateau(j1.getPions()[i]);
 		}
