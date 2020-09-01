@@ -7,4 +7,6 @@ public abstract class Element {
 		this.x = x;
 		this.y = y;
 	}
+	
+	public abstract String toString();
 }

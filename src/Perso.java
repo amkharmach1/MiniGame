@@ -44,8 +44,6 @@ public abstract class Perso extends Element {
 		return this.HP > 0;	
 	}
 	
-	public abstract String toString();
-	
 	public void jouer() {
 		//TODO Faire les actions
 	}

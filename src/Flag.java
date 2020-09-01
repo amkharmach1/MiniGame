@@ -10,4 +10,8 @@ public class Flag extends Element {
 	public void setIsTakenBy(Leader l) {
 		this.isTakenBy = l;
 	}
+	
+	public String toString() {
+		return "🚩";
+	}
 }
