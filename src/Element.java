@@ -12,4 +12,8 @@ public abstract class Element {
 	
 	public abstract int getX();
 	public abstract int getY();
+	
+	public boolean IsPerso() {
+		return (this instanceof Perso);
+	}
 }
