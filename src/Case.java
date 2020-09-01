@@ -1,6 +1,8 @@
 
 public class Case {
 	protected Element e;
+	protected int posX;
+	protected int posY;
 	
 	public Case() {
 		this.e = null;
@@ -12,5 +14,17 @@ public class Case {
 	
 	public void setElement(Element e) {
 		this.e = e;
+	}
+	
+	public int getPosX() {
+		return this.posX;
+	}
+	
+	public int getPosY() {
+		return this.posY;
+	}
+	
+	public void setPosCase() {
+		
 	}
 }

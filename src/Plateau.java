@@ -9,6 +9,7 @@ public class Plateau {
 		this.x = x;
 		this.y = y;
 		this.plateau = new Case[8][8];
+		setCasePos();
 	}
 	
 	public Plateau() {
@@ -25,6 +26,14 @@ public class Plateau {
 	
 	public void putPersoInPlateau(Perso p, int x, int y) {
 		this.plateau[x][y].setElement(p);
+	}
+	
+	public void setCasePos() {
+		for(int i = 0; i < this.x; i++) {
+			for(int j = 0; j < this.y; j++) {
+				
+			}
+		}
 	}
 
 	@Override
