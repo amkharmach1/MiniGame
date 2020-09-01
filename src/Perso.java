@@ -42,6 +42,9 @@ public abstract class Perso extends Element {
 	
 	public void wounded(int damage) {
 		this.HP = this.HP - damage;
+		if(!isAlive()) {
+			this.lePlateau.plateau[x][y].setElement(null);
+		}
 	}
 	
 	public boolean isAlive() {
@@ -86,11 +89,14 @@ public abstract class Perso extends Element {
 	public void attaquer() {
 		Mouvement mouv = new Mouvement();
 		typeMouvement direction = mouv.getMouvement();
-		int x = direction.getX();
-		int y = direction.getY();
-		if(dansLimites(x, y) 
-				&& !this.lePlateau.isFree(x + this.x, y + this.y)) {
-			
+		int x = direction.getX() * this.portee;
+		int y = direction.getY() * this.portee;
+		if(dansLimites(x, y) && !this.lePlateau.isFree(x + this.x, y + this.y)) {
+			Element target = this.lePlateau.plateau[x + this.x][y + this.y].getElement();
+			if (target.IsPerso()) {
+				Perso persoCible = (Perso) target;
+				persoCible.wounded(this.attack);
+			}
 		}
 	}
 	
