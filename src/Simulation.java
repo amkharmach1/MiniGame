@@ -104,7 +104,7 @@ public class Simulation {
 		
 		//Mouvements
 		
-		while(!j1.aPerdu() && !j2.aPerdu()) {
+		while(!j1.aPerdu() && !j2.aPerdu() && !j1.aGagne() && !j2.aGagne()) {
 			j1.jouerTour();
 			j2.jouerTour();
 		}
