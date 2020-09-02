@@ -121,13 +121,13 @@ public abstract class Perso extends Element {
 		Simulation.clean();
 	}
 	
-	protected void competence(Etat etat, String nom) {
+	protected void competence() {
 	}
 	
 	public void jouer(Etat etat, String name) {
 		bouger(etat, name);
 		attaquer(etat, name);
-		competence(etat, name);
+		competence();
 	}
 	
 	
