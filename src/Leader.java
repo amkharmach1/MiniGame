@@ -5,7 +5,8 @@ public class Leader extends Perso{
 	}
 
 	public String toString() {
-		return "👑";
+		if(!this.hasFlag) return "👑";
+		else return "🚩";
 	}
 	
 	public void wounded(int damage) {
@@ -14,7 +15,9 @@ public class Leader extends Perso{
 		if(!isAlive()) {
 			this.lePlateau.plateau[x][y].setElement(null);
 			if(this.hasFlag) {
-				this.lePlateau.plateau[x][y].setElement(new Flag(x,y));
+				Flag f = new Flag(x,y);
+				f.discover();
+				this.lePlateau.plateau[x][y].setElement(f);
 			}
 		}
 	}
@@ -25,15 +28,16 @@ public class Leader extends Perso{
 		int i = 0;
 		do {
 			direction = typeMouvement.values()[i];
-			int x = direction.getX() + this.x;
-			int y = direction.getY() + this.y;
+			int x = direction.getX();
+			int y = direction.getY();
 			if(this.dansLimites(x, y)) {
-				Element e = this.lePlateau.plateau[x][y].getElement();
-				if (dansLimites(x, y) && !this.lePlateau.isFree(x, y) && e.isFlag()) {
+				Element e = this.lePlateau.plateau[x+this.x][y+this.y].getElement();
+				if (!this.lePlateau.isFree(x+this.x, y+this.y) && e.isFlag()) {
 					flagAround = true;
 					Flag f = (Flag) e;
 					if(f.isDiscovered()) {
 						f.setIsTakenBy(this);
+						this.lePlateau.plateau[x+this.x][y+this.y].setElement(null);
 						this.hasFlag = true;
 					}
 				} 

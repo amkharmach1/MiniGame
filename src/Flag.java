@@ -5,7 +5,7 @@ public class Flag extends Element {
 	
 	public Flag (int x, int y) {
 		super(x,y);
-		isDiscovered = true;
+		isDiscovered = false;
 		this.isTakenBy = null;
 	}
 	
@@ -26,7 +26,7 @@ public class Flag extends Element {
 	}
 	
 	public String toString() {
-		if(!this.isDiscovered()) return "🚩";
+		if(this.isDiscovered()) return "🚩";
 		else return "⬜";
 	}
 
