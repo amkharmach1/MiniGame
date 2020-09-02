@@ -75,7 +75,7 @@ public abstract class Perso extends Element {
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
 				System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
-				System.out.println("DEPLACEMENT");
+				System.out.println((deplacement-i)+" déplacement(s) restant(s)");
 				System.out.print(this.lePlateau.toString());
 				 direction = selection.getMouvement();
 				 if(direction != null) {
