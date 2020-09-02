@@ -84,7 +84,7 @@ public class Simulation {
 		plateau.putPersoInPlateau(quatre);
 		
 		//Afficher le plateau 
-		System.out.println(plateau);
+		//System.out.println(plateau);
 		
 		//Mouvements
 		
