@@ -106,7 +106,7 @@ public class Simulation {
 		
 		Etat etat = new Etat(j1, j2);
 		
-		while(!j1.aPerdu() && !j2.aPerdu()) {
+		while(!j1.aPerdu() && !j2.aPerdu() && !j1.aGagne() && !j2.aGagne()) {
 			j1.jouerTour(etat);
 			j2.jouerTour(etat);
 		}

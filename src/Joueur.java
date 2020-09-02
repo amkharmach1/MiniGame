@@ -2,6 +2,8 @@
 public class Joueur {
 	private Perso[] pions = new Perso[4];
 	private String name;
+	int startX;
+	int startY;
 	
 	public Joueur(Perso e, Perso t, Perso s, Perso l, String name) {
 		pions[0] = e;
@@ -9,6 +11,8 @@ public class Joueur {
 		pions[2] = s;
 		pions[3] = l;
 		this.name = name;
+		this.startX = l.getX();
+		this.startY = l.getY();
 	}
 	
 	public void jouerTour(Etat etat) {
@@ -35,6 +39,10 @@ public class Joueur {
 			i++;
 		}
 		return aPerdu;
+	}
+	
+	public boolean aGagne() {
+		return this.pions[3].getX() == this.startX && this.pions[3].getY() == this.startY && this.pions[3].hasFlag;
 	}
 }
 
