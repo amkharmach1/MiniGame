@@ -19,8 +19,7 @@ public class Joueur {
 		System.out.println("Tour du joueur : " + this.name);
 		for (int i = 0; i < 4; i++) {
 			if (pions[i].isAlive()) {
-				etat.afficherEtat();
-				this.pions[i].jouer();
+				this.pions[i].jouer(etat);
 			}
 			Simulation.clean();
 		}
