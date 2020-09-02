@@ -8,8 +8,8 @@ public class Rules {
 			+ "\n"
 			+ "Pour gagner, il faut soit ramener le drapeau dans son camp avec son leader, soit détruire l'équipe adverse.\n"
 			+ "\n"
-			+ "Pour récupérer le drapeau, il faut d'abords le trouver, pour cela il faut que l'Eclaireur finisse sont tour \n"
-			+ "a côté du drapeau caché, pour le récupérer, il faut que le Leader finisse sont tour à côté du drapeau\n"
+			+ "Pour récupérer le drapeau, il faut d'abord le trouver, pour cela il faut que l'Eclaireur finisse son tour \n"
+			+ "a côté du drapeau caché, pour le récupérer, il faut que le Leader finisse son tour à côté du drapeau\n"
 			+ "découvert.\n"
 			+ "\n\n"
 			+ "Quitter les regles en appuyant sur Q";
