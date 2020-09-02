@@ -37,10 +37,10 @@ public class Simulation {
 				System.out.println("Merci beaucoup !");
 			}
 		}
-		clean();
 	}
 	
 	private static void jouer() {
+		clean();
 		//Création du plateau
 		Plateau plateau = new Plateau();
 		
