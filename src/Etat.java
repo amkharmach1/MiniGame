@@ -12,7 +12,7 @@ public class Etat {
 		String etat = "";
 		for(int i = 0; i < j.length; i++) {
 			for(int o = 0; o < j[i].getPions().length; o++) {
-				etat = "J" + i + ": \n";
+				etat = "J" + (i+1) + ": \n";
 				for(int p = 0; p < j[i].getPions().length; p++) {
 					etat += "" + j[i].getPions()[p].toString() + " - Vie: " + j[i].getPions()[p].getHP() + " - Attaque: " + j[i].getPions()[p].getAttack() + " - Nombre de déplacement max: " + j[i].getPions()[p].getType().deplacement + "\n";
 				}
