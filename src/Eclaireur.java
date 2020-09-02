@@ -10,14 +10,14 @@ public class Eclaireur extends Perso{
 		return "⚡️";
 	}
 	
-	public void competance() {
+	public void competence() {
 		boolean flagAround = false;
 		typeMouvement direction;
 		int i = 0;
 		do {
 			direction = typeMouvement.values()[i];
 			Element e = this.lePlateau.plateau[direction.getX() + x][direction.getY() + y].getElement();
-			if (e.isFlag()) {
+			if (!this.lePlateau.isFree(direction.getX(), direction.getY()) && e.isFlag()) {
 				flagAround = true;
 				Flag f = (Flag) e;
 				f.discover();

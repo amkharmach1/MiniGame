@@ -107,14 +107,14 @@ public abstract class Perso extends Element {
 		}
 	}
 	
-	protected void competance() {
+	protected void competence() {
 		
 	}
 	
 	public void jouer() {
 		bouger();
 		attaquer();
-		competance();
+		competence();
 	}
 	
 	
