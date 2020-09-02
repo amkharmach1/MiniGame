@@ -110,6 +110,12 @@ public class Simulation {
 			j1.jouerTour(etat);
 			j2.jouerTour(etat);
 		}
+		
+		if(j2.aPerdu() || j1.aGagne()) {
+			System.out.println("Bravo J1 !");
+		} else {
+			System.out.println("Bravo J2 !");
+		}
 	}
 	
 	public static void clean() {
