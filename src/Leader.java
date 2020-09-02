@@ -27,17 +27,18 @@ public class Leader extends Perso{
 			direction = typeMouvement.values()[i];
 			int x = direction.getX() + this.x;
 			int y = direction.getY() + this.y;
-			Element e = this.lePlateau.plateau[x][x].getElement();
-			if (dansLimites(x, y) && !this.lePlateau.isFree(x, y) && e.isFlag()) {
-				flagAround = true;
-				Flag f = (Flag) e;
-				if(f.isDiscovered()) {
-					f.setIsTakenBy(this);
-					this.hasFlag = true;
-				}
-			} else {
-				i++;
+			if(this.dansLimites(x, y)) {
+				Element e = this.lePlateau.plateau[x][x].getElement();
+				if (dansLimites(x, y) && !this.lePlateau.isFree(x, y) && e.isFlag()) {
+					flagAround = true;
+					Flag f = (Flag) e;
+					if(f.isDiscovered()) {
+						f.setIsTakenBy(this);
+						this.hasFlag = true;
+					}
+				} 
 			}
+			i++;
 		} while (i < 4 && !flagAround);
 	}
 }
