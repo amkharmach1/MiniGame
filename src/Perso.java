@@ -6,15 +6,21 @@ public abstract class Perso extends Element {
 	protected int portee;
 	protected Plateau lePlateau;
 	protected boolean hasFlag;
+	protected typePersonnages type;
 	
 	public Perso(typePersonnages t, int x, int y, Plateau lePlateau) {
 		super(x,y);
+		this.type = t;
 		this.attack = t.attaque;
 		this.HP = t.hp;
 		this.deplacement = t.deplacement;
 		this.portee = t.portee;
 		this.lePlateau = lePlateau;
 		this.hasFlag = false;
+	}
+	
+	public typePersonnages getType() {
+		return this.type;
 	}
 	
 	public void setCoor(int x, int y) {
@@ -77,7 +83,6 @@ public abstract class Perso extends Element {
 		int i = 0;
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
-				System.out.println("\n\n\n");
 				System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
 				System.out.println((deplacement-i)+" déplacement(s) restant(s)");
 				System.out.print(this.lePlateau.toString());
