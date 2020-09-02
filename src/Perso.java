@@ -75,6 +75,7 @@ public abstract class Perso extends Element {
 		int i = 0;
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
+				System.out.println("\n\n\n");
 				System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
 				System.out.println((deplacement-i)+" déplacement(s) restant(s)");
 				System.out.print(this.lePlateau.toString());
@@ -84,6 +85,7 @@ public abstract class Perso extends Element {
 						 i++;
 					 }				 
 				 }
+				 Simulation.clean();
 			} while(i < this.deplacement && direction != typeMouvement.STOP);
 		}
 	}
@@ -103,6 +105,7 @@ public abstract class Perso extends Element {
 				persoCible.wounded(this.attack);
 			}
 		}
+		Simulation.clean();
 	}
 	
 	public void jouer() {

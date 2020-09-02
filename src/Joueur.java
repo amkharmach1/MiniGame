@@ -17,6 +17,7 @@ public class Joueur {
 			if (pions[i].isAlive()) {
 				this.pions[i].jouer();
 			}
+			Simulation.clean();
 		}
 	}
 	
