@@ -77,13 +77,14 @@ public abstract class Perso extends Element {
 				&& (this.y + y >= 0 && this.y + y < this.lePlateau.getLongueur());
 	}
 	
-	public void bouger(Etat etat) {
+	public void bouger(Etat etat, String nom) {
 		Mouvement selection = new Mouvement();
 		typeMouvement direction;
 		int i = 0;
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
 				etat.afficherEtat();
+				System.out.println("Tour du joueur: " + nom + "\n");
 				
 				System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
 				System.out.println((deplacement-i)+" déplacement(s) restant(s)");
@@ -99,9 +100,10 @@ public abstract class Perso extends Element {
 		}
 	}
 	
-	public void attaquer(Etat etat) {
+	public void attaquer(Etat etat, String nom) {
 		
 		etat.afficherEtat();
+		System.out.println("Tour du joueur: " + nom + "\n");
 		System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
 		System.out.println("ATTAQUE");
 		System.out.println(this.lePlateau.toString());
@@ -119,13 +121,13 @@ public abstract class Perso extends Element {
 		Simulation.clean();
 	}
 	
-	protected void competence(Etat etat) {
+	protected void competence(Etat etat, String nom) {
 	}
 	
-	public void jouer(Etat etat) {
-		bouger(etat);
-		attaquer(etat);
-		competence(etat);
+	public void jouer(Etat etat, String name) {
+		bouger(etat, name);
+		attaquer(etat, name);
+		competence(etat, name);
 	}
 	
 	
