@@ -41,6 +41,7 @@ public abstract class Perso extends Element {
 	}
 	
 	public void wounded(int damage) {
+		System.out.println(this.toString() + " a perdu " + damage + " HP.");
 		this.HP = this.HP - damage;
 		if(!isAlive()) {
 			this.lePlateau.plateau[x][y].setElement(null);
@@ -75,7 +76,7 @@ public abstract class Perso extends Element {
 		if(!this.lePlateau.bloquer(this.x,this.y)) {
 			do {
 				System.out.println(this.toString()+"     ATTAQUE:"+this.attack+"   VIE:"+this.HP);
-				System.out.println("DEPLACEMENT");
+				System.out.println((deplacement-i)+" déplacement(s) restant(s)");
 				System.out.print(this.lePlateau.toString());
 				 direction = selection.getMouvement();
 				 if(direction != null) {
