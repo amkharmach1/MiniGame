@@ -9,7 +9,7 @@ public class Mouvement {
 	}
 	
 	public typeMouvement getMouvement() {
-		System.out.println("Saisir la direction voulu (ZQSD ou A pour passer au tour d'attaque): \n");
+		System.out.println("\nSaisir la direction voulu (ZQSD ou A pour passer au tour d'attaque): \n");
 		String input = scan.next();
 		switch (input.charAt(0)) {
 		case 'z':
