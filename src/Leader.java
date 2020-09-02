@@ -28,7 +28,7 @@ public class Leader extends Perso{
 			int x = direction.getX() + this.x;
 			int y = direction.getY() + this.y;
 			if(this.dansLimites(x, y)) {
-				Element e = this.lePlateau.plateau[x][x].getElement();
+				Element e = this.lePlateau.plateau[x][y].getElement();
 				if (dansLimites(x, y) && !this.lePlateau.isFree(x, y) && e.isFlag()) {
 					flagAround = true;
 					Flag f = (Flag) e;
