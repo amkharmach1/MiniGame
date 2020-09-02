@@ -16,11 +16,11 @@ public class Eclaireur extends Perso{
 		int i = 0;
 		do {
 			direction = typeMouvement.values()[i];
-			int x = direction.getX() + this.x;
-			int y = direction.getY() + this.y;
+			int x = direction.getX();
+			int y = direction.getY();
 			if(dansLimites(x, y)) {
-				Element e = this.lePlateau.plateau[x][x].getElement();
-				if (!this.lePlateau.isFree(x, y) && e.isFlag()) {
+				Element e = this.lePlateau.plateau[x + this.x][y+this.y].getElement();
+				if (!this.lePlateau.isFree(x+this.x, y+this.y) && e.isFlag()) {
 					flagAround = true;
 					Flag f = (Flag) e;
 					f.discover();
