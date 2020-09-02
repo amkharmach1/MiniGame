@@ -31,8 +31,10 @@ public class Leader extends Perso{
 			if (dansLimites(x, y) && !this.lePlateau.isFree(x, y) && e.isFlag()) {
 				flagAround = true;
 				Flag f = (Flag) e;
-				f.setIsTakenBy(this);
-				this.hasFlag = true;
+				if(f.isDiscovered()) {
+					f.setIsTakenBy(this);
+					this.hasFlag = true;
+				}
 			} else {
 				i++;
 			}
