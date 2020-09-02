@@ -24,6 +24,9 @@ public class Mouvement {
 		case 'q':
 		case 'Q':
 			return typeMouvement.GAUCHE;
+		case 'a':
+		case 'A':
+			return typeMouvement.ATTAQUE;
 		default:
 			return null;
 		}

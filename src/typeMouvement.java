@@ -1,7 +1,7 @@
 
 public enum typeMouvement {
 	
-	HAUT(0,-1), BAS(0,1), GAUCHE(-1,0), DROITE(1,0);
+	HAUT(0,-1), BAS(0,1), GAUCHE(-1,0), DROITE(1,0), ATTAQUE(0,0);
 	
 	public int x;
 	public int y;
