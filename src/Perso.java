@@ -41,6 +41,7 @@ public abstract class Perso extends Element {
 	}
 	
 	public void wounded(int damage) {
+		System.out.println(this.toString() + " a perdu " + damage + " HP.");
 		this.HP = this.HP - damage;
 		if(!isAlive()) {
 			this.lePlateau.plateau[x][y].setElement(null);

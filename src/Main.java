@@ -26,7 +26,6 @@ public class Main {
 			System.out.println(move.getMouvement());
 		}*/
 		
-		Simulation s = new Simulation();
 		Simulation.menu();
 		
 	}
