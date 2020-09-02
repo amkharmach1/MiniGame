@@ -1,7 +1,7 @@
 
 public enum typePersonnages {
 	
-	TANK(2,8,1,1), SNIPER(5,2,2,2), LEADER(1,5,2,1), ECLAIREUR(2,2,5,1);
+	TANK(2,8,1,1), SNIPER(4,2,2,2), LEADER(1,5,2,1), ECLAIREUR(2,2,5,1);
 	
 	public int attaque;
 	public int hp;

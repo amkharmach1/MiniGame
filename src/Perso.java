@@ -79,13 +79,12 @@ public abstract class Perso extends Element {
 				System.out.println((deplacement-i)+" déplacement(s) restant(s)");
 				System.out.print(this.lePlateau.toString());
 				 direction = selection.getMouvement();
-				 if(direction != null) {
+				 if(direction != null && direction != typeMouvement.STOP) {
 					 if(accomplirMouvement(direction)) {
 						 i++;
-					 }
-					 
+					 }				 
 				 }
-			} while(i < this.deplacement);
+			} while(i < this.deplacement && direction != typeMouvement.STOP);
 		}
 	}
 	
@@ -97,7 +96,7 @@ public abstract class Perso extends Element {
 		typeMouvement direction = mouv.getMouvement();
 		int x = direction.getX() * this.portee;
 		int y = direction.getY() * this.portee;
-		if(dansLimites(x, y) && !this.lePlateau.isFree(x + this.x, y + this.y)) {
+		if((dansLimites(x, y) && !this.lePlateau.isFree(x + this.x, y + this.y)) && direction != typeMouvement.STOP) {
 			Element target = this.lePlateau.plateau[x + this.x][y + this.y].getElement();
 			if (target.IsPerso()) {
 				Perso persoCible = (Perso) target;
