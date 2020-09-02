@@ -1,10 +1,20 @@
 
 public class Flag extends Element {
+	protected boolean isDiscovered;
 	protected Leader isTakenBy;
 	
 	public Flag (int x, int y) {
 		super(x,y);
+		isDiscovered = true;
 		this.isTakenBy = null;
+	}
+	
+	public boolean isDiscovered() {
+		return this.isDiscovered;
+	}
+	
+	public void discover() {
+		this.isDiscovered = true;
 	}
 	
 	public boolean isTaken() {
@@ -16,7 +26,7 @@ public class Flag extends Element {
 	}
 	
 	public String toString() {
-		if(this.isTaken()) return "🚩";
+		if(!this.isDiscovered()) return "🚩";
 		else return "⬜";
 	}
 

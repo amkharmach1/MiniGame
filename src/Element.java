@@ -13,7 +13,11 @@ public abstract class Element {
 	public abstract int getX();
 	public abstract int getY();
 	
-	public boolean IsPerso() {
+	public boolean isPerso() {
 		return (this instanceof Perso);
+	}
+	
+	public boolean isFlag() {
+		return (this instanceof Flag);
 	}
 }

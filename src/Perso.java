@@ -5,6 +5,7 @@ public abstract class Perso extends Element {
 	protected int deplacement;
 	protected int portee;
 	protected Plateau lePlateau;
+	protected boolean hasFlag;
 	
 	public Perso(typePersonnages t, int x, int y, Plateau lePlateau) {
 		super(x,y);
@@ -13,6 +14,7 @@ public abstract class Perso extends Element {
 		this.deplacement = t.deplacement;
 		this.portee = t.portee;
 		this.lePlateau = lePlateau;
+		this.hasFlag = false;
 	}
 	
 	public void setCoor(int x, int y) {
@@ -100,7 +102,7 @@ public abstract class Perso extends Element {
 		int y = direction.getY() * this.portee;
 		if((dansLimites(x, y) && !this.lePlateau.isFree(x + this.x, y + this.y)) && direction != typeMouvement.STOP) {
 			Element target = this.lePlateau.plateau[x + this.x][y + this.y].getElement();
-			if (target.IsPerso()) {
+			if (target.isPerso()) {
 				Perso persoCible = (Perso) target;
 				persoCible.wounded(this.attack);
 			}
@@ -108,9 +110,14 @@ public abstract class Perso extends Element {
 		Simulation.clean();
 	}
 	
+	protected void competence() {
+		
+	}
+	
 	public void jouer() {
 		bouger();
 		attaquer();
+		competence();
 	}
 	
 	
