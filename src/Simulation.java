@@ -27,7 +27,15 @@ public class Simulation {
 				"  __/ /     / / / / / / / / __/ __/ _ \\/ ___/\n" + 
 				" / __/_    / /_/ / /_/ / / /_/ /_/  __/ /    \n" + 
 				"/____(_)   \\___\\_\\__,_/_/\\__/\\__/\\___/_/     \n" + 
-				"                                             ");
+				"                                             "
+				+ "\n");
+		System.out.println("   _____      ____             __         \n" + 
+				"  |__  /     / __ \\___  ____ _/ /__  _____\n" + 
+				"   /_ <     / /_/ / _ \\/ __ `/ / _ \\/ ___/\n" + 
+				" ___/ /    / _, _/  __/ /_/ / /  __(__  ) \n" + 
+				"/____(_)  /_/ |_|\\___/\\__, /_/\\___/____/  \n" + 
+				"                     /____/               "
+				+ "\n");
 		
 		try (Scanner scan = new Scanner(System.in)) {
 			String saisieUtil = scan.next();
@@ -35,6 +43,14 @@ public class Simulation {
 			if(saisieUtil.equals("1")) Simulation.jouer();
 			else if (saisieUtil.equals("2")) {
 				System.out.println("Merci beaucoup !");
+			} else if (saisieUtil.equals("3")) {
+				Rules rule = new Rules();
+				rule.afficherRegles();
+				String out = scan.next();
+				if(out.equals("q")) {
+					Simulation.clean();
+					Simulation.menu();
+				}
 			}
 		}
 	}
