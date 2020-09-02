@@ -49,14 +49,7 @@ public class Plateau {
 	}
 	
 	public boolean isFree(int x, int y) {
-		if(coorValide(x,y)) {
 			return this.plateau[x][y].getElement() == null;	
-		}
-		return false;
-	}
-	
-	public boolean coorValide(int x, int y) {
-		return(x > 0 && x <= this.getLargeur() && y > 0 && y <= this.getLongueur());
 	}
 	
 	public Case getCase(int x, int y) {
