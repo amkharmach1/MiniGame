@@ -16,7 +16,7 @@ public class Leader extends Perso{
 			this.lePlateau.plateau[x][y].setElement(null);
 			if(this.hasFlag) {
 				Flag f = new Flag(x,y);
-				f.isDiscovered();
+				f.discover();
 				this.lePlateau.plateau[x][y].setElement(f);
 			}
 		}
