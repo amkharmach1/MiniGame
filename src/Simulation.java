@@ -104,9 +104,11 @@ public class Simulation {
 		
 		//Mouvements
 		
+		Etat etat = new Etat(j1, j2);
+		
 		while(!j1.aPerdu() && !j2.aPerdu()) {
-			j1.jouerTour();
-			j2.jouerTour();
+			j1.jouerTour(etat);
+			j2.jouerTour(etat);
 		}
 	}
 	

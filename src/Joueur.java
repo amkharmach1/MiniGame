@@ -11,10 +11,11 @@ public class Joueur {
 		this.name = name;
 	}
 	
-	public void jouerTour() {
+	public void jouerTour(Etat etat) {
 		System.out.println("Tour du joueur : " + this.name);
 		for (int i = 0; i < 4; i++) {
 			if (pions[i].isAlive()) {
+				etat.afficherEtat();
 				this.pions[i].jouer();
 			}
 			Simulation.clean();
